@@ -1,10 +1,10 @@
 # ssh-key-mgt
-Keep my authorized_keys file containing FIDO2 backed public keys up-to-date on many linux machines.
+For ssh access to my Linux machines I switched to FIDO2 hardware-token backed ssh keys. I created
+this GitHub repository to keep my Public keys stored in the authorized_keys files in sync on all
+my Linux machines. Since the Public keys are intended to be publicly available I made this 
+repository also public. This also helps the synchronisation scripts on my Linux hosts to simply
+copy the 'authorized_keys' file without auhtentication to GitHub.
 
-
-Define steps of the mechanism:
-1. Keep the main authorized_keys file in this repo
-2. How do Linux machines autheticate to this repo?
-3. Automate the sync if a change to authorized-keys file is made
-  a. Distribute the script that sync's the file
-  b. Use cron or another mechanism to trigger the sync?
+ToDo:
+1. Create some checks or procedures to avoid locking myself out of my Linux machines by copying
+   errornous Public keys or otherwise corrupt the 'authorized_keys' file.
